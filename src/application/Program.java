@@ -11,20 +11,20 @@ public class Program {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter account number: ");
-        int actNumber = sc.nextInt();
+        int number = sc.nextInt();
         sc.nextLine();
         System.out.print("Enter account holder: ");
-        String actName = sc.nextLine();
-        double balance;
-        Account account = new Account();
+        String holder = sc.nextLine();
+        double amount;
+        Account account = new Account(number,holder);
 
 
         System.out.println("Is there na initial deposit (y/n)?");
         char answer = sc.next().charAt(0);
         if (answer == 'y' ) {
-            System.out.print("Enter initial deposit value:");
-            balance = sc.nextDouble();
-        account.actDeposit(balance);
+            System.out.print("Enter initial deposit value: ");
+            amount = sc.nextDouble();
+            account.deposit(amount);
         } else if (answer == 'n') {
             System.out.println();
         }
@@ -33,14 +33,14 @@ public class Program {
         System.out.println(account.toString());
 
         System.out.print("Enter a deposit value: ");
-        balance = sc.nextDouble();
-
+        amount = sc.nextDouble();
+        account.deposit(amount);
         System.out.println("Update account data: ");
         System.out.println(account.toString());
 
         System.out.print("Enter a withdraw value: ");
-        balance = sc.nextDouble();
-        account.actwithdraw(balance);
+        amount = sc.nextDouble();
+        account.withdraw(amount);
         System.out.println("Update account data: ");
         System.out.println(account.toString());
 
