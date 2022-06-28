@@ -9,6 +9,14 @@ public class Account {
         this.number = number;
         this.holder = holder;
     }
+    /*Deixando o contrutor com "initialDeposit" eu faço com que quando a
+    regra de deposito mudar futuramente eu possa alterar somente o método "deposit"
+     */
+    public Account(int number, String holder, double initialDeposit) {
+        this.number = number;
+        this.holder = holder;
+        deposit(initialDeposit);
+    }
 
     public int getNumber() {
         return number;
@@ -17,13 +25,12 @@ public class Account {
     public String getHolder() {
         return holder;
     }
+    public void setHolder(String holder) {
+        this.holder = holder;
+    }
 
     public double getBalance() {
         return balance;
-    }
-
-    public void setHolder(String holder) {
-        this.holder = holder;
     }
 
     public void deposit(double amount) {
