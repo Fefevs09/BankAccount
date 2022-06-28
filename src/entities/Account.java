@@ -5,10 +5,14 @@ public class Account {
     private String holder;
     private double balance;
 
+    public Account() {
+
+    }
     public Account(int number, String holder) {
         this.number = number;
         this.holder = holder;
     }
+
     /*Deixando o contrutor com "initialDeposit" eu faço com que quando a
     regra de deposito mudar futuramente eu possa alterar somente o método "deposit"
      */
@@ -42,8 +46,11 @@ public class Account {
     }
 
     public String toString() {
-        return "Account " + number +
-                ", Holder: " + holder +
-                ", Balance: $ " + balance;
+        return "Account "
+                + number
+                + ", Holder: "
+                + holder
+                + ", Balance: $ "
+                + String.format("%.2f", balance);
     }
 }
